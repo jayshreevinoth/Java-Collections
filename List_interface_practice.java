@@ -1,12 +1,13 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class List_interface_practice {
     public static void main(String args[]) {
 
         // Adding the elements using add() method
-        List<Number> l1 = new ArrayList<Number>();
-        List<Number> l2 = new ArrayList<Number>();
+        List<Integer> l1 = new ArrayList<>();
+        List<Integer> l2 = new ArrayList<>();
         l1.add(5);
         l1.add(10);
         l1.add(15);
@@ -50,5 +51,41 @@ class List_interface_practice {
         // Checking if an element is present in the List class using contains() method
         System.out.println(l1.contains(2) + "  " + str1.contains("all"));
 
+        /*
+         * methods of list interface
+         * add, addall, size, clear, remove(index), removeAll, get, set, indexOf,
+         * lastIndexOf,
+         * equals, hashCode, isEmpty, contains, containsAll, sort
+         */
+        System.out.println(l1.hashCode());
+        System.out.println(l1.isEmpty());
+        System.out.println(l1.contains(15));
+        System.out.println(l1.containsAll(l2));
+        Collections.sort(l1);
+        System.out.println("Sorted array" + l1);
+
+        // ArrayList
+
+        int n = 5;
+        List<Integer> arr = new ArrayList<>(n);
+        List<Integer> arr_dup = new ArrayList<>(n);
+        for (int i = 0; i < n; i++) {
+            arr.add(i * 2);
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.println(arr.get(i));
+        }
+        System.out.println("Size" + arr.size());
+        arr_dup.addAll(arr);
+        System.out.println(arr.equals(arr_dup));
+        System.out.println(arr.containsAll(arr_dup));
+        arr_dup.add(100);
+        System.out.println(arr_dup);
+        arr_dup.removeAll(arr);
+        System.out.println(arr_dup);
+        arr.set(1, 25);
+        System.out.println(arr);
+        System.out.println(arr.lastIndexOf(8));
+        System.out.println(arr.equals(arr_dup));
     }
 }
