@@ -36,3 +36,7 @@ Operation 6: Checking if an element is present in the List class using contains(
 
 An ArrayList class which is implemented in the collection framework provides us with dynamic arrays in Java. 
 Though, it may be slower than standard arrays but can be helpful in programs where lots of manipulation in the array is needed. 
+
+ArrayList: Faster, non-synchronized, dynamically grows by 50%, preferred for non-concurrent use.
+Vector: Slower, synchronized, dynamically grows by 100%, thread-safe but considered outdated.
+
