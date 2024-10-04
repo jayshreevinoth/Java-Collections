@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Vector;
 
 class List_interface_practice {
     public static void main(String args[]) {
@@ -87,5 +88,14 @@ class List_interface_practice {
         System.out.println(arr);
         System.out.println(arr.lastIndexOf(8));
         System.out.println(arr.equals(arr_dup));
+
+        // Vector implementation
+        List<Integer> vec = new Vector<>();
+        for (int i = 0; i < 5; i++) {
+            vec.add(i);
+        }
+        System.out.println(vec);
+        vec.remove(1);
+        System.out.println(vec);
     }
 }
