@@ -40,3 +40,5 @@ Though, it may be slower than standard arrays but can be helpful in programs whe
 ArrayList: Faster, non-synchronized, dynamically grows by 50%, preferred for non-concurrent use.
 Vector: Slower, synchronized, dynamically grows by 100%, thread-safe but considered outdated.
 
+
+Stack is a class that is implemented in the collection framework and extends the vector class models and implements the Stack data structure. The class is based on the basic principle of last-in-first-out. In addition to the basic push and pop operations, the class provides three more functions of empty, search and peek.
