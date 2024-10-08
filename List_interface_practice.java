@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 import java.util.Vector;
 
 class List_interface_practice {
@@ -97,5 +98,14 @@ class List_interface_practice {
         System.out.println(vec);
         vec.remove(1);
         System.out.println(vec);
+
+        // Stack implementation
+        List<Integer> stk = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            stk.add(i + 1);
+        }
+        System.out.println(stk);
+        stk.remove(2);
+        System.out.println("stack" + stk);
     }
 }
