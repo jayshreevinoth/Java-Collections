@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -35,5 +36,12 @@ class ArrayListPractice {
 
         /* Removes duplicates using streams distinct */
         List<String> tempStream = str.stream().distinct().collect(Collectors.toList());
+
+        // Convert array list to array
+        String[] a = str.toArray(new String[str.size()]);
+
+        // Convert array to arraylist
+        List<String> l = new ArrayList<String>();
+        l = Arrays.asList(a);
     }
 }
