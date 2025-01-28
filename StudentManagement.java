@@ -10,7 +10,6 @@ public class StudentManagement {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("****** Student Management System  *******");
-
         System.out.println("1. Add Student");
         System.out.println("2. Delete Student ");
         System.out.println("3. Update Grade");
@@ -18,14 +17,21 @@ public class StudentManagement {
         System.out.println("5. Search student by ID");
         System.out.println("6: Exit");
         while (true) {
+
             System.out.print("Enter your choice:");
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
                     System.err.println("Enter id:");
-                    int studentId = scanner.nextInt();
-                    scanner.nextLine();
+                    int studentId = 0;
+                    try {
+                        studentId = scanner.nextInt();
+                        scanner.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Enter number for the student id");
+                        return;
+                    }
                     System.out.println("Enter name:");
                     String studentName = scanner.nextLine();
                     System.out.println("Enter grade:");
@@ -35,7 +41,14 @@ public class StudentManagement {
                     break;
                 case 2:
                     System.out.println("Enter id to remove the student record:");
-                    int removeId = scanner.nextInt();
+                    int removeId = 0;
+                    try {
+                        removeId = scanner.nextInt();
+                    } catch (Exception e) {
+                        System.out.println("Enter number for the student id");
+                        return;
+
+                    }
                     boolean removed = false;
                     for (Student s : students) {
                         if (s.getId() == removeId) {
@@ -52,7 +65,14 @@ public class StudentManagement {
                     break;
                 case 3:
                     System.out.println("Enter id to update the student record:");
-                    int updateId = scanner.nextInt();
+                    int updateId = 0;
+                    try {
+                        updateId = scanner.nextInt();
+                    } catch (Exception e) {
+                        System.out.println("Enter number for student Id");
+                        return;
+                    }
+
                     boolean updated = false;
                     for (Student s : students) {
                         if (s.getId() == updateId) {
@@ -79,7 +99,16 @@ public class StudentManagement {
                     break;
                 case 5:
                     System.out.println("Enter id to view the student record:");
-                    int enterId = scanner.nextInt();
+
+                    int enterId = 0;
+                    try {
+                        enterId = scanner.nextInt();
+                    } catch (Exception e) {
+                        System.out.println("Enter number for id");
+                        return;
+
+                    }
+
                     boolean viewed = false;
                     for (Student s : students) {
                         if (s.getId() == enterId) {
@@ -136,7 +165,6 @@ class Student {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return "id: " + id + " name: " + name + " grade: " + grade;
     }
 }
